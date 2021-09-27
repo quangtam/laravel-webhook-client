@@ -21,6 +21,12 @@ return [
             'signature_header_name' => 'Signature',
 
             /*
+             * The name of queue.
+             */
+            'queue_name' => env('WEBHOOK_QUEUE_NAME', 'default'),
+
+
+            /*
              *  This class will verify that the content of the signature header is valid.
              *
              * It should implement \Spatie\WebhookClient\SignatureValidator\SignatureValidator

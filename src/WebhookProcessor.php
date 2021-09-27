@@ -59,7 +59,7 @@ class WebhookProcessor
 
             $webhookCall->clearException();
 
-            dispatch($job);
+            dispatch($job)->onQueue($this->config->queueName);
         } catch (Exception $exception) {
             $webhookCall->saveException($exception);
 
